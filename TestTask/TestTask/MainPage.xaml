@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TestTask"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="TestTask.MainPage">
+    
+
+    <StackLayout  BackgroundColor="#303030">
+        <StackLayout HorizontalOptions="Center" VerticalOptions="StartAndExpand" Margin="0, 10 , 0, 0" HeightRequest="400" WidthRequest="350">
+            <Label Text="Sunset and Sunrise board" TextColor="Orange" FontSize="Large" HorizontalOptions="Center"/>
+            <maps:Map WidthRequest="200" HeightRequest="200" x:Name="myMap" IsShowingUser="True" MapType="Hybrid"/>
+            <Label  x:Name="OutputLabel" TextColor="Orange" FontSize="Micro"/>
+            <Label x:Name="PositionField" TextColor="OrangeRed" FontSize="Small" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Text="Latitude: " Grid.Row="0" Grid.Column="0" TextColor="Orange" HorizontalOptions="Center"/>
+            <Entry x:Name="Latitude" Grid.Row="1" Grid.Column="0" WidthRequest="140" BackgroundColor="Orange"/>
+            <Label Text="Longitude: " Grid.Row="0" Grid.Column="1" TextColor="Orange" HorizontalOptions="Center"/>
+            <Entry x:Name="Longitude" Grid.Row="1" Grid.Column="1" WidthRequest="140" BackgroundColor="Orange"/>
+        </Grid>
+        <Grid Padding="5, 0, 0, 5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" WidthRequest="140" HeightRequest="75"  VerticalOptions="EndAndExpand" HorizontalOptions="Center" Text="Get my sunset / sunrise" BackgroundColor="#454548" TextColor="Orange" Clicked="Button_Clicked"/>
+            <Button Grid.Column="1" WidthRequest="140" HeightRequest="75"  VerticalOptions="EndAndExpand" HorizontalOptions="Center"  Text="Get a place " BackgroundColor="#454548" TextColor="Orange" Clicked="Button_Clicked_1"/>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
